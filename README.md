@@ -19,8 +19,7 @@ Create persistent volume (folder /data is persistent on minikube)
 $ kubectl create -f minikube/jenkins-volume.yaml
 ```
 
-
-Execute helm:
+Execute helm to install Jenkins:
 ```
 $ make install_jenkins
 ```
