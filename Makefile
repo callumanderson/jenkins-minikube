@@ -19,3 +19,11 @@ status:
 
 history:
 	helm history ${INSTALLATION_NAME}
+
+admin_password:
+	kubectl get secret --namespace ${CLUSTER_NAMESPACE} \
+		${INSTALLATION_NAME} -o jsonpath="{.data.jenkins-admin-password}" \
+		| base64 --decode;echo
+
+launch:
+	minikube service -n ${CLUSTER_NAMESPACE} ${INSTALLATION_NAME}
