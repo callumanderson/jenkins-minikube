@@ -22,12 +22,12 @@ $ kubectl create -f minikube/jenkins-volume.yaml
 
 Execute helm:
 ```
-$ helm install --name jenkins -f helm/jenkins-values.yaml stable/jenkins --namespace jenkins-project
+$ make install_jenkins
 ```
 
 To upgrade the deployment, simply modify the jenkins-values.yaml and execute:
 ```
-helm upgrade -f helm/jenkins-values.yaml jenkins stable/jenkins
+$ make install_jenkins
 ```
 
 
