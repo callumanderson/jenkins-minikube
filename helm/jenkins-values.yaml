@@ -41,6 +41,8 @@ Master:
     - git:3.9.1
     - greenballs:1.15
     - configuration-as-code:1.0
+    - cloudbees-devoptics-enabler:0.3
+    - devoptics:1.1349
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   ScriptApproval:
     - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
