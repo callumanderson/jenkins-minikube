@@ -43,6 +43,7 @@ Master:
     - configuration-as-code:1.0
     - cloudbees-devoptics-enabler:0.3
     - devoptics:1.1349
+   # - sonar
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   ScriptApproval:
     - "method groovy.json.JsonSlurperClassic parseText java.lang.String"

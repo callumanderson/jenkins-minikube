@@ -5,6 +5,7 @@ CLUSTER_NAMESPACE ?= jenkins-project
 TILLERNS ?= jenkins-project
 VALUES_FILE ?= helm/jenkins-values.yaml
 HELMTIMEOUT ?= 600
+JENKINS_POD := $(shell kubectl get pods -lapp=jenkins -n jenkins-project -o name |sed s:pod/\::)
 
 install_jenkins:
 	helm upgrade --wait --timeout ${HELMTIMEOUT} --namespace ${CLUSTER_NAMESPACE} \
@@ -27,3 +28,6 @@ admin_password:
 
 launch:
 	minikube service -n ${CLUSTER_NAMESPACE} ${INSTALLATION_NAME}
+
+copy_config:
+	kubectl cp config/jenkins-config.yaml ${CLUSTER_NAMESPACE}/${JENKINS_POD}:/tmp/jenkins-config.yaml
